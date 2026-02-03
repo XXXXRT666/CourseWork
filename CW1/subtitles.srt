@@ -1,0 +1,1167 @@
+1
+00:00:02,920 --> 00:00:05,800
+Okay, recording is on.
+
+2
+00:00:05,800 --> 00:00:08,160
+Hello to future listeners.
+
+3
+00:00:08,160 --> 00:00:09,320
+For posterity,
+
+4
+00:00:09,320 --> 00:00:10,760
+the purpose of
+this meeting is to
+
+5
+00:00:10,760 --> 00:00:12,680
+clarify the
+specifications for
+
+6
+00:00:12,680 --> 00:00:14,440
+the entertainment
+booking app,
+
+7
+00:00:14,440 --> 00:00:16,640
+which we at Acme
+Corp are making for
+
+8
+00:00:16,640 --> 00:00:18,800
+the University
+of Hindeburgh.
+
+9
+00:00:18,800 --> 00:00:21,360
+I'm Bobby from the
+team at Acme Corp,
+
+10
+00:00:21,360 --> 00:00:22,720
+and here with me,
+
+11
+00:00:22,720 --> 00:00:25,320
+we have... Hi, I'm Cristina.
+
+12
+00:00:25,320 --> 00:00:27,520
+I work at the University
+of Hindeburgh
+
+13
+00:00:27,520 --> 00:00:29,560
+as the Lead of the
+Student Support Team.
+
+14
+00:00:29,560 --> 00:00:32,440
+Also another colleague
+of mine, Jessica,
+
+15
+00:00:32,440 --> 00:00:33,840
+from the Student
+Wellbeing
+
+16
+00:00:33,840 --> 00:00:36,640
+Department, was supposed
+to be here with me,
+
+17
+00:00:36,640 --> 00:00:38,440
+but she wasn't
+able to make it.
+
+18
+00:00:38,440 --> 00:00:39,840
+She left me some notes,
+
+19
+00:00:39,840 --> 00:00:42,080
+though, so hopefully
+that would be enough.
+
+20
+00:00:42,080 --> 00:00:43,920
+Let's hope it is.
+
+21
+00:00:43,920 --> 00:00:46,080
+Okay, let's talk
+about the app.
+
+22
+00:00:46,080 --> 00:00:47,680
+First off, can you give me
+
+23
+00:00:47,680 --> 00:00:50,165
+a rundown of its
+basic functionality?
+
+24
+00:00:50,165 --> 00:00:52,770
+Certainly. The idea is
+
+25
+00:00:52,770 --> 00:00:54,650
+that various
+entertainment providers,
+
+26
+00:00:54,650 --> 00:00:56,610
+which are businesses
+like theatres,
+
+27
+00:00:56,610 --> 00:00:59,010
+cinemas, sports
+places, and so on,
+
+28
+00:00:59,010 --> 00:01:00,970
+can register onto
+the app and then
+
+29
+00:01:00,970 --> 00:01:03,250
+add their events
+onto the app, too.
+
+30
+00:01:03,250 --> 00:01:06,050
+Then, students would also
+be able to log in and
+
+31
+00:01:06,050 --> 00:01:07,330
+request a list of all of
+
+32
+00:01:07,330 --> 00:01:09,410
+the event performances
+at a certain date,
+
+33
+00:01:09,410 --> 00:01:11,450
+choose specific
+performances to
+
+34
+00:01:11,450 --> 00:01:12,490
+look at in more detail,
+
+35
+00:01:12,490 --> 00:01:13,970
+and book the performance
+
+36
+00:01:13,970 --> 00:01:15,730
+they're viewing
+if they want to.
+
+37
+00:01:15,730 --> 00:01:17,930
+Okay, great. So let's
+
+38
+00:01:17,930 --> 00:01:19,650
+pick that apart
+one by one.
+
+39
+00:01:19,650 --> 00:01:21,850
+You mentioned
+entertainment providers
+
+40
+00:01:21,850 --> 00:01:23,050
+can register onto the app,
+
+41
+00:01:23,050 --> 00:01:24,850
+but in the written
+spec we got,
+
+42
+00:01:24,850 --> 00:01:26,530
+you also mentioned
+something about
+
+43
+00:01:26,530 --> 00:01:28,130
+verifying them by checking
+
+44
+00:01:28,130 --> 00:01:30,170
+a list. Can you elaborate?
+
+45
+00:01:30,170 --> 00:01:32,850
+Yes. We can't just
+
+46
+00:01:32,850 --> 00:01:35,170
+allow anyone with an
+Internet connection to
+
+47
+00:01:35,170 --> 00:01:37,850
+say they're an
+entertainment provider
+
+48
+00:01:37,850 --> 00:01:39,890
+offering events
+to uni students.
+
+49
+00:01:39,890 --> 00:01:41,850
+There needs to be
+some verification.
+
+50
+00:01:41,850 --> 00:01:44,850
+Makes sense. Okay.
+But how do we do it?
+
+51
+00:01:44,850 --> 00:01:46,570
+Well, thankfully,
+
+52
+00:01:46,570 --> 00:01:48,410
+the university
+already maintains an
+
+53
+00:01:48,410 --> 00:01:49,930
+up-to-date list
+of approved
+
+54
+00:01:49,930 --> 00:01:51,530
+businesses for
+other reasons,
+
+55
+00:01:51,530 --> 00:01:53,090
+so we could just use that.
+
+56
+00:01:53,090 --> 00:01:55,810
+We were intending to
+just give you the list.
+
+57
+00:01:55,810 --> 00:01:58,370
+Okay. But how do
+
+58
+00:01:58,370 --> 00:02:01,250
+we then keep that
+list updated?
+
+59
+00:02:01,250 --> 00:02:02,730
+Do you just send us
+
+60
+00:02:02,730 --> 00:02:03,890
+a new list every time
+
+61
+00:02:03,890 --> 00:02:05,490
+you make a change to it?
+
+62
+00:02:05,490 --> 00:02:06,810
+That could work, but it
+
+63
+00:02:06,810 --> 00:02:08,930
+wouldn't be
+very efficient.
+
+64
+00:02:09,040 --> 00:02:12,160
+Hold on for a second.
+
+65
+00:02:13,600 --> 00:02:15,800
+Oh, yes. Here it
+
+66
+00:02:15,800 --> 00:02:17,440
+is in my notes
+from our techs.
+
+67
+00:02:17,440 --> 00:02:19,800
+There's apparently
+an API you can use
+
+68
+00:02:19,800 --> 00:02:21,640
+to directly ask
+our system if
+
+69
+00:02:21,640 --> 00:02:23,680
+a specific entertainment
+provider's
+
+70
+00:02:23,680 --> 00:02:25,280
+business number
+is on the list.
+
+71
+00:02:25,280 --> 00:02:27,640
+If it is, you allow
+the registration.
+
+72
+00:02:27,640 --> 00:02:30,040
+If not, don't allow
+the registration.
+
+73
+00:02:30,040 --> 00:02:32,920
+Okay. Yeah. So we just
+use the API then.
+
+74
+00:02:32,920 --> 00:02:35,640
+Great. Okay, that
+clears it up.
+
+75
+00:02:35,640 --> 00:02:37,320
+And then how
+do you want to
+
+76
+00:02:37,320 --> 00:02:38,480
+do student registration?
+
+77
+00:02:38,480 --> 00:02:41,180
+Should there be a
+similar system for that?
+
+78
+00:02:41,180 --> 00:02:44,280
+No, students would
+be
+
+79
+00:02:44,280 --> 00:02:45,520
+pre-registered with their
+
+80
+00:02:45,520 --> 00:02:46,920
+university credentials,
+
+81
+00:02:46,920 --> 00:02:48,720
+and they would
+just log in freely.
+
+82
+00:02:48,720 --> 00:02:50,400
+No need to check for them.
+
+83
+00:02:50,400 --> 00:02:53,680
+Okay. Understood.
+Now, moving on
+
+84
+00:02:53,680 --> 00:02:55,240
+to the entertainment
+provider
+
+85
+00:02:55,240 --> 00:02:57,120
+creating a new event
+on the system.
+
+86
+00:02:57,120 --> 00:02:58,600
+I think for the most part,
+
+87
+00:02:58,600 --> 00:03:00,280
+we understand how
+that should work,
+
+88
+00:03:00,280 --> 00:03:01,840
+except we weren't sure
+
+89
+00:03:01,840 --> 00:03:03,760
+about the way
+tickets work.
+
+90
+00:03:03,760 --> 00:03:05,675
+In what way?
+
+91
+00:03:05,675 --> 00:03:09,110
+So when a student books
+a ticket on the app,
+
+92
+00:03:09,110 --> 00:03:10,550
+we would need
+to notify the
+
+93
+00:03:10,550 --> 00:03:12,830
+entertainment
+provider about it
+
+94
+00:03:12,830 --> 00:03:15,070
+because that way they can
+
+95
+00:03:15,070 --> 00:03:17,470
+update their logs of
+who has bought tickets,
+
+96
+00:03:17,470 --> 00:03:18,670
+and they can also update
+
+97
+00:03:18,670 --> 00:03:20,990
+their count of
+remaining tickets.
+
+98
+00:03:20,990 --> 00:03:23,810
+Surely, they
+need to do that.
+
+99
+00:03:23,810 --> 00:03:26,750
+Okay, so you
+could do that?
+
+100
+00:03:26,750 --> 00:03:29,830
+We could, but there
+are issues with it.
+
+101
+00:03:29,830 --> 00:03:32,110
+We need some kind
+of integration
+
+102
+00:03:32,110 --> 00:03:33,670
+with every entertainment
+
+103
+00:03:33,670 --> 00:03:35,830
+provider's own
+ticketing system,
+
+104
+00:03:35,830 --> 00:03:37,910
+and that's
+problematic since
+
+105
+00:03:37,910 --> 00:03:40,230
+every one of their systems
+will be different.
+
+106
+00:03:40,230 --> 00:03:42,430
+Alternatively,
+we could come up
+
+107
+00:03:42,430 --> 00:03:44,190
+with some general
+solution,
+
+108
+00:03:44,190 --> 00:03:46,190
+but then that
+would likely be
+
+109
+00:03:46,190 --> 00:03:49,270
+very limiting in some
+other ways, probably.
+
+110
+00:03:49,320 --> 00:03:52,320
+Actually, you don't
+need to do that.
+
+111
+00:03:52,320 --> 00:03:53,440
+Part of the deal with
+
+112
+00:03:53,440 --> 00:03:55,240
+the entertainment
+providers would
+
+113
+00:03:55,240 --> 00:03:56,760
+be that they
+reserve tickets
+
+114
+00:03:56,760 --> 00:03:58,720
+to use just on our system.
+
+115
+00:03:58,720 --> 00:04:00,120
+These are separate from
+
+116
+00:04:00,120 --> 00:04:01,320
+any other tickets they may
+
+117
+00:04:01,320 --> 00:04:02,640
+be selling themselves.
+
+118
+00:04:02,640 --> 00:04:04,360
+So they wouldn't
+need to update
+
+119
+00:04:04,360 --> 00:04:05,840
+their remaining
+ticket count
+
+120
+00:04:05,840 --> 00:04:08,165
+at all when someone
+books on the app.
+
+121
+00:04:08,165 --> 00:04:10,850
+Okay. So just to
+
+122
+00:04:10,850 --> 00:04:12,610
+check if I understand
+correctly,
+
+123
+00:04:12,610 --> 00:04:14,730
+the entertainment
+provider just
+
+124
+00:04:14,730 --> 00:04:16,090
+specifies the number of
+
+125
+00:04:16,090 --> 00:04:17,810
+tickets for each
+performance.
+
+126
+00:04:17,810 --> 00:04:19,410
+And after that, we just
+
+127
+00:04:19,410 --> 00:04:21,770
+handle it entirely
+on our own system,
+
+128
+00:04:21,770 --> 00:04:23,290
+and we don't even have to
+
+129
+00:04:23,290 --> 00:04:25,250
+communicate with them
+at all after that.
+
+130
+00:04:25,250 --> 00:04:28,610
+Yes. Exactly. Yeah.
+Okay. Yeah. That does
+
+131
+00:04:28,610 --> 00:04:30,490
+make things a lot
+easier. Yeah.
+
+132
+00:04:30,490 --> 00:04:32,050
+I'm glad.
+
+133
+00:04:32,050 --> 00:04:34,810
+Okay. Now, next point.
+
+134
+00:04:34,810 --> 00:04:36,730
+When students request
+
+135
+00:04:36,730 --> 00:04:38,290
+the list of performances,
+
+136
+00:04:38,290 --> 00:04:39,970
+they specify a date
+
+137
+00:04:39,970 --> 00:04:42,770
+and get a list of
+performances on that date.
+
+138
+00:04:42,770 --> 00:04:44,410
+What should students see
+
+139
+00:04:44,410 --> 00:04:46,555
+in that list of
+performances?
+
+140
+00:04:46,555 --> 00:04:48,540
+Just some basic info,
+
+141
+00:04:48,540 --> 00:04:49,700
+like the event name,
+
+142
+00:04:49,700 --> 00:04:52,460
+the time and venue
+of the performance,
+
+143
+00:04:52,460 --> 00:04:53,860
+who is the one providing
+
+144
+00:04:53,860 --> 00:04:56,780
+the event... I guess
+that's enough.
+
+145
+00:04:56,780 --> 00:05:00,020
+Okay. And I assume
+they should see
+
+146
+00:05:00,020 --> 00:05:01,620
+all available
+info when they
+
+147
+00:05:01,620 --> 00:05:03,540
+look at a specific
+performance.
+
+148
+00:05:03,540 --> 00:05:05,020
+Yes, indeed.
+
+149
+00:05:05,020 --> 00:05:06,500
+But this reminds me.
+
+150
+00:05:06,500 --> 00:05:07,300
+We talked about
+
+151
+00:05:07,300 --> 00:05:09,020
+an additional
+feature we wanted
+
+152
+00:05:09,020 --> 00:05:10,420
+that I believe isn't in
+
+153
+00:05:10,420 --> 00:05:12,100
+the specification
+we sent you.
+
+154
+00:05:12,100 --> 00:05:13,860
+Did we talk about students
+
+155
+00:05:13,860 --> 00:05:16,100
+being able to
+choose preferences?
+
+156
+00:05:16,100 --> 00:05:20,180
+Preferences? No.
+There wasn't
+
+157
+00:05:20,180 --> 00:05:21,660
+anything like
+that in the spec.
+
+158
+00:05:21,660 --> 00:05:23,985
+Okay. What's the
+idea with that?
+
+159
+00:05:23,985 --> 00:05:26,030
+The idea is that students
+
+160
+00:05:26,030 --> 00:05:27,310
+should be able to specify
+
+161
+00:05:27,310 --> 00:05:30,550
+preferences regarding
+performances somehow.
+
+162
+00:05:30,550 --> 00:05:31,830
+And whenever they get
+
+163
+00:05:31,830 --> 00:05:33,270
+the list of performances,
+
+164
+00:05:33,270 --> 00:05:35,030
+it will prioritise ones
+
+165
+00:05:35,030 --> 00:05:37,110
+that match their
+preferences.
+
+166
+00:05:37,110 --> 00:05:38,710
+Okay. Yeah, that
+
+167
+00:05:38,710 --> 00:05:40,190
+sounds like a
+very good idea.
+
+168
+00:05:40,190 --> 00:05:42,550
+Okay. How would
+
+169
+00:05:42,550 --> 00:05:44,390
+they specify their
+preferences,
+
+170
+00:05:44,390 --> 00:05:45,070
+and how would
+
+171
+00:05:45,070 --> 00:05:47,870
+the prioritisation
+work exactly?
+
+172
+00:05:48,450 --> 00:05:52,570
+Well, to be honest,
+I'm not sure.
+
+173
+00:05:52,570 --> 00:05:55,570
+It was a spur-of-the-moment idea 
+Jessica had,
+
+174
+00:05:55,570 --> 00:05:58,370
+but she's not
+here, so... Okay.
+
+175
+00:05:58,370 --> 00:06:01,530
+Do we then organise
+a meeting at
+
+176
+00:06:01,530 --> 00:06:03,090
+some later date
+with Jessica
+
+177
+00:06:03,090 --> 00:06:04,810
+so we can talk
+about the details?
+
+178
+00:06:04,810 --> 00:06:07,090
+Unfortunately,
+Jessica won't be
+
+179
+00:06:07,090 --> 00:06:08,450
+back any time soon,
+
+180
+00:06:08,450 --> 00:06:10,890
+so I don't think
+that's an option.
+
+181
+00:06:10,890 --> 00:06:13,290
+And anyways, for
+things like this,
+
+182
+00:06:13,290 --> 00:06:14,690
+we're happy for you to go
+
+183
+00:06:14,690 --> 00:06:16,410
+with what students
+would like.
+
+184
+00:06:16,410 --> 00:06:18,250
+Maybe ask them how
+they feel about
+
+185
+00:06:18,250 --> 00:06:21,410
+it and implement it
+based on what they want.
+
+186
+00:06:21,700 --> 00:06:24,820
+Okay. Yeah, we'll do that.
+
+187
+00:06:24,820 --> 00:06:26,860
+Yeah, we were
+actually planning
+
+188
+00:06:26,860 --> 00:06:28,620
+to organise
+something like that...
+
+189
+00:06:28,620 --> 00:06:30,180
+Sorry to interrupt!
+
+190
+00:06:30,180 --> 00:06:31,780
+I must shortly run
+to another meeting,
+
+191
+00:06:31,780 --> 00:06:33,300
+and there's more
+we need to cover.
+
+192
+00:06:33,300 --> 00:06:35,500
+Did you have any other
+questions on your end?
+
+193
+00:06:35,500 --> 00:06:38,300
+Sure. We have one
+more question.
+
+194
+00:06:38,300 --> 00:06:41,340
+Regarding booking,
+how do we handle when
+
+195
+00:06:41,340 --> 00:06:42,940
+students book
+performances for
+
+196
+00:06:42,940 --> 00:06:45,100
+non-ticketed events? How
+does that even work?
+
+197
+00:06:45,100 --> 00:06:46,780
+Well, they should
+only be able to
+
+198
+00:06:46,780 --> 00:06:48,340
+book ones for
+ticketed events.
+
+199
+00:06:48,340 --> 00:06:49,620
+The non-ticketed ones
+
+200
+00:06:49,620 --> 00:06:51,980
+shouldn't require or
+even allow bookings.
+
+201
+00:06:51,980 --> 00:06:54,060
+Okay. Got you. Right.
+
+202
+00:06:54,060 --> 00:06:55,460
+That's everything
+on our end.
+
+203
+00:06:55,460 --> 00:06:56,940
+Was there anything
+else you wanted
+
+204
+00:06:56,940 --> 00:06:58,865
+to talk about that
+we haven't covered?
+
+205
+00:06:58,865 --> 00:07:01,150
+Yes. Jessica was really
+
+206
+00:07:01,150 --> 00:07:02,350
+insistent that we include
+
+207
+00:07:02,350 --> 00:07:04,510
+a review system
+for the events so
+
+208
+00:07:04,510 --> 00:07:07,230
+students know how much
+they were enjoyed.
+
+209
+00:07:07,230 --> 00:07:09,790
+Okay. That sounds
+reasonable as well.
+
+210
+00:07:09,790 --> 00:07:12,310
+Did Jessica say how she
+expects it to work,
+
+211
+00:07:12,310 --> 00:07:15,070
+or did she leave
+anything in the notes?
+
+212
+00:07:16,660 --> 00:07:20,260
+Not really. It just
+says "Reviews!!!" with
+
+213
+00:07:20,260 --> 00:07:21,820
+three exclammation
+marks and with
+
+214
+00:07:21,820 --> 00:07:22,980
+a little arrow pointing to
+
+215
+00:07:22,980 --> 00:07:24,900
+it saying "Keep it simple".
+
+216
+00:07:24,900 --> 00:07:27,740
+I guess you could just
+ask students to give
+
+217
+00:07:27,740 --> 00:07:29,180
+a review for
+the performance
+
+218
+00:07:29,180 --> 00:07:31,580
+after the
+performance happens?
+
+219
+00:07:31,580 --> 00:07:34,940
+A review for the performance
+or for the event
+
+220
+00:07:34,940 --> 00:07:36,740
+overall? Because
+the performance
+
+221
+00:07:36,740 --> 00:07:38,420
+will have ended by then...
+
+222
+00:07:38,420 --> 00:07:40,460
+Oh, yes, you're right.
+
+223
+00:07:40,460 --> 00:07:42,020
+Maybe for the event
+
+224
+00:07:42,020 --> 00:07:44,340
+overall makes more
+sense in that case...
+
+225
+00:07:44,340 --> 00:07:46,460
+But what if an event has
+
+226
+00:07:46,460 --> 00:07:48,900
+performances with
+different performers,
+
+227
+00:07:48,900 --> 00:07:50,620
+some better than others?
+
+228
+00:07:50,620 --> 00:07:53,020
+How would students
+distinguish ratings in
+
+229
+00:07:53,020 --> 00:07:55,590
+this case? I don't know...
+
+230
+00:07:55,590 --> 00:07:59,150
+Yeah. That's a
+good question.
+
+231
+00:07:59,470 --> 00:08:01,870
+There might be
+some simple way
+
+232
+00:08:01,870 --> 00:08:02,630
+to do it, though.
+
+233
+00:08:02,630 --> 00:08:04,750
+If you want, we
+could try to do
+
+234
+00:08:04,750 --> 00:08:06,510
+some research
+regarding that
+
+235
+00:08:06,510 --> 00:08:09,010
+with the students, if
+that's okay with you.
+
+236
+00:08:09,010 --> 00:08:13,110
+Sorry. Oh, sure.
+Yes, let's say that.
+
+237
+00:08:13,110 --> 00:08:15,870
+Implement review somehow,
+but keep it simple:
+
+238
+00:08:15,870 --> 00:08:17,350
+a rating and a comment, and
+
+239
+00:08:17,350 --> 00:08:20,030
+students seeing the
+average rating somewhere.
+
+240
+00:08:20,030 --> 00:08:25,070
+Okay. Yeah, we'll
+look into that. Yeah.
+
+241
+00:08:25,070 --> 00:08:26,390
+I'm really sorry, but
+
+242
+00:08:26,390 --> 00:08:27,630
+I really need to go now.
+
+243
+00:08:27,630 --> 00:08:29,350
+I hope this
+meeting was useful
+
+244
+00:08:29,350 --> 00:08:30,150
+and helped you understand
+
+245
+00:08:30,150 --> 00:08:31,350
+what we want from the app!
+
+246
+00:08:31,350 --> 00:08:32,750
+Yeah, it definitely did.
+
+247
+00:08:32,750 --> 00:08:34,630
+Thanks for your
+time, Cristina.
+
+248
+00:08:34,630 --> 00:08:37,430
+Thank you! Okay, bye!
+
+249
+00:08:37,430 --> 00:08:47,770
+Bye! Okay. Who even
+
+250
+00:08:47,770 --> 00:08:48,970
+thinks it's a good idea to
+
+251
+00:08:48,970 --> 00:08:51,170
+schedule a ten-minute
+meeting for this?
+
+252
+00:08:51,170 --> 00:08:55,610
+It's way not enough.
+Oh, whoops!
+

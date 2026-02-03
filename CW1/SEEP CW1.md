@@ -1,0 +1,205 @@
+# SEEP CW1
+
+## Task1
+
+Question list:
+
+1. Can the sponsor increase or decrease the subsidy?
+   - So, as a student, I don’t really know the answer to that. I would probably say yes, but unfortunately I can’t give a specific answer.
+
+2. Preference feature; perhaps the event provider should be required to "tag" performances with a certain amount of relevant keywords from a predetermined list. Students could then select which tags they are interested in and the system would display events in order of number of matching tags?
+   - You would have a preference for that performance, right, and that could be up to three event types, such as music, movies, or sports. You could also choose to have no preferences at all when searching. So that would probably be implemented as a tagging feature
+
+3. Are admins able to edit all details of the events, such as price, location, time etc. ?
+   - So, as a student, I don’t know the answer to that, but the EP should be able to change the time and the booking date as well. I don’t know the specifics on the other side
+
+4. For the review part, Is the rating 1-5 stars or simply a like/dislike?
+   - When a performance I have booked has taken place, or after I have attended it, I would like to be able to leave a review. The review should include a mandatory rating from one to five stars and an optional free-text comment. This review should be associated with the event and indicate the specific performance I attended
+
+5. For tickets that are fully sponsored (purchased for free), is it still necessary to call an external payment interface, or can the reservation number be issued directly by the App?
+   - So, are you referring to cases where the cost is fully covered by the sponsor? As a student, I am not entirely sure, but it would probably make sense for them to receive an automatic reference. That seems like a good idea.
+
+6. Can EP give the address of performance as pending status?
+   - So I can’t really answer that as a student, because that would be the EP’s responsibility, but I would say that it’s a good idea, yes
+
+7. Can entertainment provider enable to see contact details of audiences
+   - Again, I can’t answer that, but my preference would be that, if the user gives consent to share other information about themselves, then yes. Otherwise, it should be limited to only their email and their name
+
+## Task2
+
+- <img src="./UML.png" alt="UML Graph" width="600">
+
+## Task3
+
+### 1a
+
+- Use Case Name: Book performance
+- Primary actor: Student
+- Supporting actors: External Payment System
+- Summary:
+  - A student selects a specific event performance and the number of tickets they wish to purchase, completing the transaction through an external payment system.
+- Precondition:
+  1. The student is logged into the app using their university email and password.
+  2. The selected performance must have tickets available
+- Trigger: Student selects the option to book a performance after viewing its details
+- Guarantee:
+  - Success guarantee: A unique booking number is issued, a record containing student contact details is created, and payment is confirmed
+  - Failure guarantee: No payment is processed, ticket availability remains unchanged, and no booking record is generated
+- Main Success Scenario:
+  1. Student chooses the number of tickets they would like to book
+  2. System verifies that the requested number does not exceed the tickets remaining for that performance
+  3. System redirects the student to the external payment system to handle the financial transaction.
+  4. External Payment System processes the payment and notifies the app of a successful transaction
+  5. System generates a unique booking number for the student
+  6. System creates a booking record including the student’s name, email address, and phone number
+  7. System displays the booking confirmation and unique number to the student.
+- Extensions:
+  1. 2a. The requested number exceeds availability.
+     - System informs the student of the remaining capacity and asks for a new quantity.
+     - Student enters a valid quantity or cancels
+
+  2. 4a. Payment failure:
+     - The external system returns a failure message or the user cancels the payment
+     - System Notifies the student that the booking was not successful and no tickets were reserved.
+
+- Use Case Name: Cancel booking
+- Primary actor: Student
+- Supporting actors: External Payment System
+- Summary:
+  - A student cancels an existing booking using a booking number, provided the performance is at least 24 hours away. The system processes the cancellation and requests a refund.
+- Precondition:
+  1. The student is logged into the system
+  2. A booking with the given booking number exists.
+  3. The performance is at least 24 hours away
+
+- Trigger: The student requests to cancel a booking
+- Guarantee:
+  - Success: The booking is cancelled and a refund request is sent
+  - Failure: The booking remains active
+- Main Success Scenario:
+  1. Student enters a booking number
+  2. System verifies that the booking exists and belongs to the student
+  3. System checks that the performance is at least 24 hours in the future
+  4. System sends a refund request to the External Payment System
+  5. External Payment System confirms the refund
+  6. System marks the booking as cancelled
+  7. System updates ticket availability
+  8. System confirms cancellation to the student
+- Extension:
+  1. 2a. Booking number invalid
+     - The System displays an error and ends the use case unsuccessfully
+  2. 3a. Less than 24 hours before performance
+     - The system denies cancellation and informs the student.
+
+### 1b
+
+- Use Case Name: Sponsor future performance
+- Primary actor: University Admin Staff
+- Supporting actors: None
+- Summary: Allow admin staff to authorise and a university-funded discount on any paid performance.
+- Precondition:
+  1. Admin is logged in
+  2. Performance ticket is not free
+- Trigger: Admin requires to sponsor an performance
+- Guarantee:
+  - Success: Ticket price is successfully reduced by designated amount.
+  - Failure: Ticket price stays the same
+- Main Success Scenario:
+  1. Admin enters an amount to reduce by
+  2. System requests price of event checks whether this amount is valid
+  3. Ticket price is adjusted by the designated amount.
+  4. System checks the price of tickets and ensures the change has been made
+  5. System sends notice of change to External Payment System
+  6. System confirms price reduction to Admin
+- Extensions:
+  1. 2a. Admin enters invalid amount to reduce by.
+     - Return to step 1
+  2. 4a. Ticket price doesn’t match expected amount
+     - Rollack to initial price
+     - Display error message
+     - Return to step 1
+
+- Use Case Name: Cancel performance
+- Primary actor: Entertainment Provider
+- Supporting actors: External Payment System
+- Summary: An entertainment provider cancels a performance, after which the system prevents further bookings and initiates refunds for existing bookings.
+- Precondition:
+  1. The EP is logged into the system
+  2. The performance exists and belongs to the EP
+
+- Trigger: The EP selects the option to cancel a performance
+- Guarantee:
+  - Success: The performance is cancelled and refunds are requested
+  - Minimal: No new bookings can be made for the performance
+
+- Main Success Scenario:
+  1. EP selects one of its performances
+  2. System displays performance details
+  3. EP requests cancellation
+  4. System marks the performance as cancelled
+  5. System identifies all related bookings
+  6. System requests refunds via the External Payment System
+  7. System confirms cancellation to the EP
+
+- Extensions:
+  1. 6a. Refund request fails for some bookings
+     - System records failed refunds and reports partial success.
+
+### 2a
+
+- Use Case: Create event
+- Primary actor: Entertainment Provider
+- Supporting actors: None
+- Summary: An entertainment provider creates a new event by specifying its title and type. The system records the event and allows the provider to add performances under it.
+
+### 2b
+
+- Use Case: Specify preferences for list of performances
+- Primary Actor: Student, Entertainment Provider
+- Supporting Actors: None
+- Summary: An entertainment provider selects up to 3 tags from a premade list that best match the activity. When viewing the list of performances, the student may select as many tags as desired from a dropdown menu. They then press apply, and the list is sorted by the amount of matching tags, descending. Tags selected by the student may be changed at any time.
+
+- Use Case: Cancel Performance
+- Primary Actor: Entertainment Provider
+- Supporting Actors: External Payment System
+- Summary: While viewing a performance in detail, an entertainment provider will have the option to “cancel” provided they are logged in as the one that originally created the performance. On required input, they are asked to confirm that they wish to cancel the performance. Once confirmed, the system gets details of all bookings already made for the specific event and notifies the payment system to issue the necessary refund(s).
+
+## Task 4
+
+1. Use Case Name: Book performance
+   1. Security:
+      1. The system must ensure that all booking requests are associated with an authenticated student session
+      2. The system shall not save student card CVV in the cloud
+
+   2. Robustness:
+      1. The system shall ensure that no booking record is created if payment processing fails or times out
+
+2. Use Case Name: Cancel Booking
+   1. Security:
+      1. The system must verify that the booking number belongs to the requesting student before allowing cancellation
+
+   2. Robustness:
+      1. The system shall ensure that a booking remains active if a refund request fails
+
+   3. Usability:
+      1. The system shall provide clear feedback explaining why a cancellation request is denied
+
+3. Use Case Name: Specify preferences for list of performances
+   1. Accessibility
+      1. The system should allow users to change text size/colour when viewing the performance list.
+   2. Robustness
+      1. The system shall display performances by order of sorting if they have the same amount of matching tags.
+   3. Platform Compatibility
+      1. The system interface shall scale with the users’ screen size.
+   4. Performance
+      1. Under normal wifi and database conditions, the system should load all sorted performance entries within 2 seconds of the student pressing “apply”.
+
+# Task5
+
+## Reflection on teamwork
+
+We initially created a Whatsapp group chat to coordinate the coursework; this worked fine. We then created a shared document on Google Docs which any of us may edit in order to contribute to the tasks. Most communication throughout tasks was done online, and although a decent substitute in the event that a group member can’t make it in person, we reckon more in-person meetings would have been beneficial due to technical difficulties such as issues with mic, poor connectivity, etc. The initial split of work was carried out well and resulted in a fully even split, however in reality this was somewhat ignored and some team members ended up doing more than others. Only two members managed to participate in the in-person interview, which was seen as a substantial contribution by both.
+
+## Reflection on the quality of your work
+
+## Reflection on the approach taken
